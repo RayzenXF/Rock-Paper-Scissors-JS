@@ -30,9 +30,6 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
 function playRound(humanChoice, computerChoice) {
 
     if (humanChoice === computerChoice) {
@@ -50,8 +47,24 @@ function playRound(humanChoice, computerChoice) {
         console.log("Oops! Computer wins! " + computerChoice + " beats " + humanChoice + "!");
         computerScore++;
     }
-
-    console.log("Your score - " + humanScore);
-    console.log("Computer score - " + computerScore);
-    
 }
+
+function playGame() {
+
+    while (humanScore < 5 && computerScore < 5) {
+        let humanSelection = getHumanChoice();
+        let computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+    }
+
+    if (humanScore === computerScore) {
+        console.log("Draw! Your and Computer score is 5!");
+    } else if (humanScore === 5) {
+        console.log("You Win! Your score is - " + humanScore + ", Computer Score is - " + computerScore);
+    } else {
+        console.log("Computer Win! Your score is - " + humanScore + ", Computer Score is - " + computerScore);
+    }
+}
+
+playGame();
+
