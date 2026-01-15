@@ -47,8 +47,6 @@ function playRound(humanChoice, computerChoice) {
         console.log("Oops! Computer wins! " + computerChoice + " beats" + humanChoice + "!");
         computerScore++;
     }
-
-    return computerScore, humanScore;
     
 }
 
