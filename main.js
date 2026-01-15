@@ -27,3 +27,30 @@ function getHumanChoice() {
 
 }
 
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(humanChoice, computerChoice) {
+
+    if (humanChoice === computerChoice) {
+        console.log("Draw!");
+    } else if (humanChoice === "rock" && computerChoice === "scissors") {
+        console.log("You Win! " + humanChoice + " beats" + computerChoice + "!");
+        humanScore++;
+    } else if (humanChoice === "scissors" && computerChoice === "paper") {
+        console.log("You Win! " + humanChoice + " beats" + computerChoice + "!");
+        humanScore++;
+    } else if (humanChoice === "paper" && computerChoice === "rock") {
+        console.log("You Win! " + humanChoice + " beats" + computerChoice + "!");
+        humanScore++;       
+    } else {
+        console.log("Oops! Computer wins! " + computerChoice + " beats" + humanChoice + "!");
+        computerScore++;
+    }
+
+    return computerScore, humanScore;
+    
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
