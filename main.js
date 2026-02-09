@@ -4,6 +4,8 @@ const scissorsBtn = document.querySelector("#scissors-btn");
 
 let humanScore = 0;
 let computerScore = 0;
+let humanChoice = "";
+let computerChoice = "";
 
 function getComputerChoice() {
 
@@ -22,7 +24,7 @@ function getComputerChoice() {
     return computerSelection;
 }
 
-function playRound(humanChoice, computerChoice) {
+function playRound(computerChoice) {
 
     if (humanChoice === computerChoice) {
         console.log("Draw!");
@@ -40,3 +42,13 @@ function playRound(humanChoice, computerChoice) {
         computerScore++;
     }
 }
+
+rockBtn.addEventListener("click", () => {
+    humanChoice = "rock";
+    // console.log(humanChoice);
+
+    computerChoice = getComputerChoice();
+    // console.log(computerChoice);
+
+    playRound(computerChoice);
+});
