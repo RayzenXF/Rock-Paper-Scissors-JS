@@ -5,8 +5,12 @@ const scissorsBtn = document.querySelector("#scissors-btn");
 const consoleGame = document.querySelector("#console-game");
 const consolePara = document.querySelector("#console-para");
 
+const humanScoreText = document.querySelector("#human-score");
+const computerScoreText = document.querySelector("#computer-score");
+
 let humanScore = 0;
 let computerScore = 0;
+
 let humanChoice = "";
 let computerChoice = "";
 
@@ -31,19 +35,22 @@ function playRound(computerChoice) {
 
     if (humanChoice === computerChoice) {
         consolePara.textContent = "Draw!";
-
     } else if (humanChoice === "rock" && computerChoice === "scissors") {
         consolePara.textContent = `You Win! Your ${humanChoice} beats computer's ${computerChoice}!`;
         humanScore++;
+        humanScoreText.textContent = humanScore;
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
         consolePara.textContent = `You Win! Your ${humanChoice} beats computer's ${computerChoice}!`;
         humanScore++;
+        humanScoreText.textContent = humanScore;
     } else if (humanChoice === "paper" && computerChoice === "rock") {
         consolePara.textContent = `You Win! Your ${humanChoice} beats computer's ${computerChoice}!`;
-        humanScore++;       
+        humanScore++;
+        humanScoreText.textContent = humanScore;       
     } else {
         consolePara.textContent = `Oops, Computer Wins! Computer's ${computerChoice} beats your ${humanChoice}!`;
         computerScore++;
+        computerScoreText.textContent = computerScore;
     }
 }
 
