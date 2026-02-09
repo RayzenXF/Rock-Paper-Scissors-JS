@@ -40,13 +40,3 @@ function playRound(humanChoice, computerChoice) {
         computerScore++;
     }
 }
-
-function playGame() {
-    if (humanScore === computerScore) {
-        console.log("Draw! Your and Computer score is 5!");
-    } else if (humanScore === 5) {
-        console.log("You Win! Your score is - " + humanScore + ", Computer Score is - " + computerScore);
-    } else {
-        console.log("Computer Win! Your score is - " + humanScore + ", Computer Score is - " + computerScore);
-    }
-}
