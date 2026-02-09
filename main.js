@@ -45,10 +45,18 @@ function playRound(computerChoice) {
 
 rockBtn.addEventListener("click", () => {
     humanChoice = "rock";
-    // console.log(humanChoice);
-
     computerChoice = getComputerChoice();
-    // console.log(computerChoice);
+    playRound(computerChoice);
+});
 
+paperBtn.addEventListener("click", () => {
+    humanChoice = "paper";
+    computerChoice = getComputerChoice();
+    playRound(computerChoice);
+});
+
+scissorsBtn.addEventListener("click", () => {
+    humanChoice = "scissors";
+    computerChoice = getComputerChoice();
     playRound(computerChoice);
 });
