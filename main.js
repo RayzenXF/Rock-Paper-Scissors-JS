@@ -2,6 +2,9 @@ const rockBtn = document.querySelector("#rock-btn");
 const paperBtn = document.querySelector("#paper-btn");
 const scissorsBtn = document.querySelector("#scissors-btn");
 
+const consoleGame = document.querySelector("#console-game");
+const consolePara = document.querySelector("#console-para");
+
 let humanScore = 0;
 let computerScore = 0;
 let humanChoice = "";
@@ -27,18 +30,19 @@ function getComputerChoice() {
 function playRound(computerChoice) {
 
     if (humanChoice === computerChoice) {
-        console.log("Draw!");
+        consolePara.textContent = "Draw!";
+
     } else if (humanChoice === "rock" && computerChoice === "scissors") {
-        console.log("You Win! " + humanChoice + " beats " + computerChoice + "!");
+        consolePara.textContent = `You Win! Your ${humanChoice} beats computer's ${computerChoice}!`;
         humanScore++;
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
-        console.log("You Win! " + humanChoice + " beats " + computerChoice + "!");
+        consolePara.textContent = `You Win! Your ${humanChoice} beats computer's ${computerChoice}!`;
         humanScore++;
     } else if (humanChoice === "paper" && computerChoice === "rock") {
-        console.log("You Win! " + humanChoice + " beats " + computerChoice + "!");
+        consolePara.textContent = `You Win! Your ${humanChoice} beats computer's ${computerChoice}!`;
         humanScore++;       
     } else {
-        console.log("Oops! Computer wins! " + computerChoice + " beats " + humanChoice + "!");
+        consolePara.textContent = `Oops, Computer Wins! Computer's ${computerChoice} beats your ${humanChoice}!`;
         computerScore++;
     }
 }
