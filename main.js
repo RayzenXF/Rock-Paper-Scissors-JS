@@ -2,6 +2,9 @@ const rockBtn = document.querySelector("#rock-btn");
 const paperBtn = document.querySelector("#paper-btn");
 const scissorsBtn = document.querySelector("#scissors-btn");
 
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
 
     let computerSelection;
@@ -18,17 +21,6 @@ function getComputerChoice() {
 
     return computerSelection;
 }
-
-function getHumanChoice() {
-
-    const humanSelection = prompt("Rock, Paper, Scissors?").toLowerCase();
-
-    return humanSelection;
-
-}
-
-let humanScore = 0;
-let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
 
@@ -50,13 +42,6 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
-
-    while (humanScore < 5 && computerScore < 5) {
-        let humanSelection = getHumanChoice();
-        let computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-    }
-
     if (humanScore === computerScore) {
         console.log("Draw! Your and Computer score is 5!");
     } else if (humanScore === 5) {
