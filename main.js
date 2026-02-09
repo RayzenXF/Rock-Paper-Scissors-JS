@@ -1,3 +1,7 @@
+const rockBtn = document.querySelector("#rock-btn");
+const paperBtn = document.querySelector("#paper-btn");
+const scissorsBtn = document.querySelector("#scissors-btn");
+
 function getComputerChoice() {
 
     let computerSelection;
@@ -18,10 +22,6 @@ function getComputerChoice() {
 function getHumanChoice() {
 
     const humanSelection = prompt("Rock, Paper, Scissors?").toLowerCase();
-
-    // You do not need to handle reprompting if the user enters an invalid input, 
-    // as that would require things we will teach later.                            --- The Odin Project!
-    // For now, just assume the user will always enter a valid choice.
 
     return humanSelection;
 
@@ -65,6 +65,3 @@ function playGame() {
         console.log("Computer Win! Your score is - " + humanScore + ", Computer Score is - " + computerScore);
     }
 }
-
-playGame();
-
