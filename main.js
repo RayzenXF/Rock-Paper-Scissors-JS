@@ -2,6 +2,8 @@ const rockBtn = document.querySelector("#rock-btn");
 const paperBtn = document.querySelector("#paper-btn");
 const scissorsBtn = document.querySelector("#scissors-btn");
 
+const resetBtn = document.querySelector("#reset-btn");
+
 const consoleGame = document.querySelector("#console-game");
 const consolePara = document.querySelector("#console-para");
 
@@ -50,6 +52,7 @@ function checkWin() {
         disableButtons();
     } else if (computerScore === 5) {
         consolePara.textContent = `Ohhh... Computer won 5 rounds. Try again!`;
+        disableButtons();
     }
 };
 
