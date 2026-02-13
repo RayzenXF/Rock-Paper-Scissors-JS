@@ -4,8 +4,7 @@ const scissorsBtn = document.querySelector("#scissors-btn");
 
 const resetBtn = document.querySelector("#reset-btn");
 
-const consoleGame = document.querySelector("#console-game");
-const consolePara = document.querySelector("#console-para");
+const consoleGame = document.querySelector(".console-game");
 
 const humanScoreText = document.querySelector("#human-score");
 const computerScoreText = document.querySelector("#computer-score");
@@ -17,6 +16,12 @@ let computerScore = 0;
 
 let humanChoice = "";
 let computerChoice = "";
+
+function consoleMessage(message) {
+    const consolePara = document.createElement("p");
+    consolePara.textContent = message;
+    consoleGame.appendChild(consolePara);
+};
 
 function getComputerChoice() {
 
@@ -54,10 +59,10 @@ function enableButtons() {
 function checkWin() {
 
     if (humanScore === 5) {
-        consolePara.textContent = `Hooray! You won 5 rounds! Congratulations!`;
+        consoleMessage(`Hooray! You won 5 rounds! Congratulations!`);
         disableButtons();
     } else if (computerScore === 5) {
-        consolePara.textContent = `Ohhh... Computer won 5 rounds. Try again!`;
+        consoleMessage(`Ohhh... Computer won 5 rounds. Try again!`);
         disableButtons();
     }
 };
@@ -65,25 +70,25 @@ function checkWin() {
 function playRound(computerChoice) {
 
     if (humanChoice === computerChoice) {
-        consolePara.textContent = "Draw!";
+        consoleMessage("Draw!");
         checkWin();
     } else if (humanChoice === "rock" && computerChoice === "scissors") {
-        consolePara.textContent = `You Won! Your ${humanChoice} beats computer's ${computerChoice}!`;
+        consoleMessage(`You Won! Your ${humanChoice} beats computer's ${computerChoice}!`);
         humanScore++;
         humanScoreText.textContent = humanScore;
         checkWin();
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
-        consolePara.textContent = `You Won! Your ${humanChoice} beats computer's ${computerChoice}!`;
+        consoleMessage(`You Won! Your ${humanChoice} beats computer's ${computerChoice}!`);
         humanScore++;
         humanScoreText.textContent = humanScore;
         checkWin();
     } else if (humanChoice === "paper" && computerChoice === "rock") {
-        consolePara.textContent = `You Won! Your ${humanChoice} beats computer's ${computerChoice}!`;
+        consoleMessage(`You Won! Your ${humanChoice} beats computer's ${computerChoice}!`);
         humanScore++;
         humanScoreText.textContent = humanScore;
         checkWin();
     } else {
-        consolePara.textContent = `Oops, Computer Won! Computer's ${computerChoice} beats your ${humanChoice}!`;
+        consoleMessage(`Oops, Computer Won! Computer's ${computerChoice} beats your ${humanChoice}!`);
         computerScore++;
         computerScoreText.textContent = computerScore;
         checkWin();
@@ -115,5 +120,5 @@ resetBtn.addEventListener("click", () => {
 
     humanScoreText.textContent = humanScore;
     computerScoreText.textContent = computerScore;
-    consolePara.textContent = `Good luck!`;
+    consoleMessage(`Good luck!`);
 });
