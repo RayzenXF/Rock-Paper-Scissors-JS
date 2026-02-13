@@ -10,6 +10,8 @@ const consolePara = document.querySelector("#console-para");
 const humanScoreText = document.querySelector("#human-score");
 const computerScoreText = document.querySelector("#computer-score");
 
+resetBtn.disabled = true;
+
 let humanScore = 0;
 let computerScore = 0;
 
@@ -37,12 +39,16 @@ function disableButtons() {
     rockBtn.disabled = true;
     paperBtn.disabled = true;
     scissorsBtn.disabled = true;
+
+    resetBtn.disabled = false;
 };
 
 function enableButtons() {
     rockBtn.disabled = false;
     paperBtn.disabled = false;
     scissorsBtn.disabled = false;
+
+    resetBtn.disabled = true;
 };
 
 function checkWin() {
