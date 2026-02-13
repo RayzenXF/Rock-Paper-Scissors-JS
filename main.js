@@ -4,6 +4,7 @@
 
     const resetBtn = document.querySelector("#reset-btn");
 
+    const consoleGame = document.querySelector("#console-game");
     const consolePara = document.querySelector("#console-para");
 
     const humanScoreText = document.querySelector("#human-score");
