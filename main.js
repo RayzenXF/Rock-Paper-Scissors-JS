@@ -26,31 +26,52 @@ function getComputerChoice() {
         computerSelection = "paper";
     } else if (getComputerNum === 3) {
         computerSelection = "scissors";
-    } 
+    }
 
     return computerSelection;
 }
+
+function disableButtons() {
+    rockBtn.disabled = true;
+    paperBtn.disabled = true;
+    scissorsBtn.disabled = true;
+};
+
+function checkWin() {
+
+    if (humanScore === 5) {
+        consolePara.textContent = `Hooray! You won 5 rounds! Congratulations!`;
+        disableButtons();
+    } else if (computerScore === 5) {
+        consolePara.textContent = `Ohhh... Computer won 5 rounds. Try again!`;
+    }
+};
 
 function playRound(computerChoice) {
 
     if (humanChoice === computerChoice) {
         consolePara.textContent = "Draw!";
+        checkWin();
     } else if (humanChoice === "rock" && computerChoice === "scissors") {
-        consolePara.textContent = `You Win! Your ${humanChoice} beats computer's ${computerChoice}!`;
+        consolePara.textContent = `You Won! Your ${humanChoice} beats computer's ${computerChoice}!`;
         humanScore++;
         humanScoreText.textContent = humanScore;
+        checkWin();
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
-        consolePara.textContent = `You Win! Your ${humanChoice} beats computer's ${computerChoice}!`;
+        consolePara.textContent = `You Won! Your ${humanChoice} beats computer's ${computerChoice}!`;
         humanScore++;
         humanScoreText.textContent = humanScore;
+        checkWin();
     } else if (humanChoice === "paper" && computerChoice === "rock") {
-        consolePara.textContent = `You Win! Your ${humanChoice} beats computer's ${computerChoice}!`;
+        consolePara.textContent = `You Won! Your ${humanChoice} beats computer's ${computerChoice}!`;
         humanScore++;
-        humanScoreText.textContent = humanScore;       
+        humanScoreText.textContent = humanScore;
+        checkWin();
     } else {
-        consolePara.textContent = `Oops, Computer Wins! Computer's ${computerChoice} beats your ${humanChoice}!`;
+        consolePara.textContent = `Oops, Computer Won! Computer's ${computerChoice} beats your ${humanChoice}!`;
         computerScore++;
         computerScoreText.textContent = computerScore;
+        checkWin();
     }
 }
 
