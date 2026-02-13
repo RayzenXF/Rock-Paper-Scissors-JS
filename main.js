@@ -37,6 +37,12 @@ function disableButtons() {
     scissorsBtn.disabled = true;
 };
 
+function enableButtons() {
+    rockBtn.disabled = false;
+    paperBtn.disabled = false;
+    scissorsBtn.disabled = false;
+};
+
 function checkWin() {
 
     if (humanScore === 5) {
