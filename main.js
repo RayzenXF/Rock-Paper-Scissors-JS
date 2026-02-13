@@ -101,3 +101,13 @@ scissorsBtn.addEventListener("click", () => {
     computerChoice = getComputerChoice();
     playRound(computerChoice);
 });
+
+resetBtn.addEventListener("click", () => {
+   enableButtons();
+   humanScore = 0;
+   computerScore = 0; 
+
+   humanScoreText.textContent = humanScore;
+   computerScoreText.textContent = computerScore;
+   consolePara.textContent = `Good luck!`;
+});
