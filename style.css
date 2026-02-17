@@ -1,0 +1,13 @@
+.console-game {
+    width: 500px;
+    background-color: black;
+    color: greenyellow;
+
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#rock-btn:disabled, #paper-btn:disabled, #scissors-btn:disabled, #reset-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
