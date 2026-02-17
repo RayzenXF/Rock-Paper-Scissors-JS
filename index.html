@@ -10,21 +10,22 @@
 <body>
     
     <div class="main-container">
-        <h1>Rock, Paper, Scissors!</h1>
+        <h1 id="main-heading">Rock Paper Scissors!</h1>
         <h2>Select:</h2>
         <div class="rps-button-container">
-            <button class="rps-btn" id="rock-btn">✊</button>
-            <button class="rps-btn" id="paper-btn">✋</button>
-            <button class="rps-btn" id="scissors-btn">✌️</button>
+            <button class="rps-btn" id="rock-btn">🪨</button>
+            <button class="rps-btn" id="paper-btn">📃</button>
+            <button class="rps-btn" id="scissors-btn">✂️</button>
         </div>
         <div class="reset-btn-container">
             <button class="rps-btn" id="reset-btn">Play again!</button>
+            <h3 id="rules-heading"><i>First who score 5 - wins the game!</i></h3>
         </div>
 
-        <h2 id="score">Score: You: <span id="human-score">0</span> | Computer: <span id="computer-score">0</span></h2>
+        <h2 id="score">Score: <span class="human-score-txt">You:</span> <span class="human-score-txt" id="human-score">0</span> | <span class="computer-score-txt">Computer:</span> <span class="computer-score-txt" id="computer-score">0</span></h2>
 
         <div class="console-game">
-            <p id="console-para"></p>
+            <p id="console-para">:></p>
         </div>
     </div>
         
